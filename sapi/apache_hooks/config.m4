@@ -106,7 +106,7 @@ if test "$PHP_APACHE_HOOKS" != "no"; then
                       \$(mkinstalldirs) '$APXS_SYSCONFDIR' && \
                        $APXS -S LIBEXECDIR='$APXS_LIBEXECDIR' \
                              -S SYSCONFDIR='$APXS_SYSCONFDIR' \
-                             -i -a -n php5 $SAPI_SHARED"
+                             -i -n php5 $SAPI_SHARED"
     fi
   fi
 
