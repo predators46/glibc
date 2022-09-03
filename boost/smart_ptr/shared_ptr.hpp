@@ -47,6 +47,11 @@
 #endif
 #endif
 
+#if defined( BOOST_SP_DISABLE_DEPRECATED )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif
+
 namespace boost
 {
 
@@ -530,6 +535,11 @@ public:
         return *this;
     }
 
+#endif
+
+#if defined( BOOST_SP_DISABLE_DEPRECATED )
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 #endif
 
 #ifndef BOOST_NO_AUTO_PTR
@@ -1063,5 +1073,9 @@ template< class T > std::size_t hash_value( boost::shared_ptr<T> const & p ) BOO
 }
 
 } // namespace boost
+
+#if defined( BOOST_SP_DISABLE_DEPRECATED )
+#pragma GCC diagnostic pop
+#endif
 
 #endif  // #ifndef BOOST_SMART_PTR_SHARED_PTR_HPP_INCLUDED
