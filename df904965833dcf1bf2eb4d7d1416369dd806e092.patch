@@ -6,15 +6,15 @@ Subject: [PATCH] Disable deprecation warnings on g++/clang
 ---
  .../boost/smart_ptr/detail/shared_count.hpp   | 10 +++++
  .../detail/sp_disable_deprecated.hpp          | 40 +++++++++++++++++++
- include/boost/smart_ptr/scoped_ptr.hpp        | 10 +++++
- include/boost/smart_ptr/shared_ptr.hpp        | 10 +++++
+ boost/smart_ptr/scoped_ptr.hpp        | 10 +++++
+ boost/smart_ptr/shared_ptr.hpp        | 10 +++++
  4 files changed, 70 insertions(+)
- create mode 100644 include/boost/smart_ptr/detail/sp_disable_deprecated.hpp
+ create mode 100644 boost/smart_ptr/detail/sp_disable_deprecated.hpp
 
-diff --git a/include/boost/smart_ptr/detail/shared_count.hpp b/include/boost/smart_ptr/detail/shared_count.hpp
+diff --git a/boost/smart_ptr/detail/shared_count.hpp b/include/boost/smart_ptr/detail/shared_count.hpp
 index cd07ed65fc..7996aa4325 100644
---- a/include/boost/smart_ptr/detail/shared_count.hpp
-+++ b/include/boost/smart_ptr/detail/shared_count.hpp
+--- a/boost/smart_ptr/detail/shared_count.hpp
++++ b/boost/smart_ptr/detail/shared_count.hpp
 @@ -28,6 +28,7 @@
  #include <boost/smart_ptr/bad_weak_ptr.hpp>
  #include <boost/smart_ptr/detail/sp_counted_base.hpp>
@@ -46,11 +46,11 @@ index cd07ed65fc..7996aa4325 100644
  #ifdef __BORLANDC__
  # pragma warn .8027     // Functions containing try are not expanded inline
  #endif
-diff --git a/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp b/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp
+diff --git a/boost/smart_ptr/detail/sp_disable_deprecated.hpp b/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp
 new file mode 100644
 index 0000000000..f79bdf38a8
 --- /dev/null
-+++ b/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp
++++ b/boost/smart_ptr/detail/sp_disable_deprecated.hpp
 @@ -0,0 +1,40 @@
 +#ifndef BOOST_SMART_PTR_DETAIL_SP_DISABLE_DEPRECATED_HPP_INCLUDED
 +#define BOOST_SMART_PTR_DETAIL_SP_DISABLE_DEPRECATED_HPP_INCLUDED
@@ -92,10 +92,10 @@ index 0000000000..f79bdf38a8
 +#endif
 +
 +#endif // #ifndef BOOST_SMART_PTR_DETAIL_SP_DISABLE_DEPRECATED_HPP_INCLUDED
-diff --git a/include/boost/smart_ptr/scoped_ptr.hpp b/include/boost/smart_ptr/scoped_ptr.hpp
+diff --git a/boost/smart_ptr/scoped_ptr.hpp b/include/boost/smart_ptr/scoped_ptr.hpp
 index be6722d5f5..d5d8720f52 100644
---- a/include/boost/smart_ptr/scoped_ptr.hpp
-+++ b/include/boost/smart_ptr/scoped_ptr.hpp
+--- a/boost/smart_ptr/scoped_ptr.hpp
++++ b/boost/smart_ptr/scoped_ptr.hpp
 @@ -15,12 +15,18 @@
  #include <boost/assert.hpp>
  #include <boost/checked_delete.hpp>
@@ -124,10 +124,10 @@ index be6722d5f5..d5d8720f52 100644
 +#endif
 +
  #endif // #ifndef BOOST_SMART_PTR_SCOPED_PTR_HPP_INCLUDED
-diff --git a/include/boost/smart_ptr/shared_ptr.hpp b/include/boost/smart_ptr/shared_ptr.hpp
+diff --git a/boost/smart_ptr/shared_ptr.hpp b/include/boost/smart_ptr/shared_ptr.hpp
 index 991ca3dad3..47bc33d517 100644
---- a/include/boost/smart_ptr/shared_ptr.hpp
-+++ b/include/boost/smart_ptr/shared_ptr.hpp
+--- a/boost/smart_ptr/shared_ptr.hpp
++++ b/boost/smart_ptr/shared_ptr.hpp
 @@ -29,6 +29,7 @@
  #include <boost/detail/workaround.hpp>
  #include <boost/smart_ptr/detail/sp_convertible.hpp>
